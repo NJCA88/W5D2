@@ -1,0 +1,835 @@
+  [1m[35m (1317.8ms)[0m  [1m[35mCREATE DATABASE "reddit_clone_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (268.1ms)[0m  [1m[35mCREATE DATABASE "reddit_clone_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-09-18 11:06:06 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/c8ae7620cab1c50a/variables" for 127.0.0.1 at 2018-09-18 11:06:08 -0700
+Started GET "/" for 127.0.0.1 at 2018-09-18 11:06:10 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/d13e3f9ab057b565/variables" for 127.0.0.1 at 2018-09-18 11:06:10 -0700
+Started GET "/" for 127.0.0.1 at 2018-09-18 11:06:16 -0700
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/f40d931d15d317d3/variables" for 127.0.0.1 at 2018-09-18 11:06:16 -0700
+  [1m[35m (318.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180918173857)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (75.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "session_token" character varying, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180918173857_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (34.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180918173857"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (16.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-18 18:06:37.925521"], ["updated_at", "2018-09-18 18:06:37.925521"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-09-18 11:06:40 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 65ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:06:56 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_auth.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 1357ms (Views: 1297.6ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:07:11 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authencity_token"=>"LZg53VoqtjEn+rUE7OPoDo47kcn9tQhZh/1WZFuXx67nQ4cINHcjhL3Tn5K5ai6ds1ZJJDlCCzmYIGHJ8hMFUg==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/f0e1a071d45aeecd/variables" for 127.0.0.1 at 2018-09-18 11:07:11 -0700
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:07:38 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authencity_token"=>"LZg53VoqtjEn+rUE7OPoDo47kcn9tQhZh/1WZFuXx67nQ4cINHcjhL3Tn5K5ai6ds1ZJJDlCCzmYIGHJ8hMFUg==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/790450954ef2b320/variables" for 127.0.0.1 at 2018-09-18 11:07:39 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:07:44 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 48.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:07:53 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authencity_token"=>"IGsfnLpKcoljLaO/5iKaZtBe6D1co0loGGHGvTmjUvjqsKFJ1BfnPPkEiSmzq1z17TMw0JhUSggHvPEQkCeQBA==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/ed25bb43e6ccb4f2/variables" for 127.0.0.1 at 2018-09-18 11:07:54 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:08:30 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:08:39 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"uNDCD8PPogsGy0cl+g7EiKaewkTAQCqzR0a6VDaUfUZyC3zarZI3vpzibbOvhwIbm/MaqQS3KdNYm435nxC/ug==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (17.3ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "CzTpXrC9xPuVrqZXH4zRjQ"], ["username", "chris"], ["password_digest", "$2a$10$kaohb./9sXxydXh5c3ntFelQkbSZlfJ3gO2awAxCk6RhQodTSxbEy"], ["created_at", "2018-09-18 18:08:39.992899"], ["updated_at", "2018-09-18 18:08:39.992899"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (29.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["updated_at", "2018-09-18 18:08:40.014952"], ["id", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering users/create.html.erb within layouts/application
+  Rendered users/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 211ms (Views: 22.9ms | ActiveRecord: 48.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-09-18 11:09:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:15:02 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (59.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 835ms (ActiveRecord: 60.1ms)
+
+
+
+NameError - undefined local variable or method `session_url' for #<#<Class:0x00007f940dcfa960>:0x00007f940e4ec308>
+Did you mean?  session:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___208947166042481499_70136936266000'
+
+Started POST "/__better_errors/945cb6abab46957e/variables" for 127.0.0.1 at 2018-09-18 11:15:03 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:15:28 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 601ms (ActiveRecord: 0.5ms)
+
+
+
+NameError - undefined local variable or method `sessions_url' for #<#<Class:0x00007f940dcfa960>:0x00007f94121e2820>
+Did you mean?  session:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___208947166042481499_70136979978700'
+
+Started POST "/__better_errors/38f6afbdc72b4df6/variables" for 127.0.0.1 at 2018-09-18 11:15:29 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:15:54 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 745ms (ActiveRecord: 11.7ms)
+
+
+
+NameError - undefined local variable or method `sessions_url' for #<#<Class:0x00007f941386ff70>:0x00007f941386e5d0>
+Did you mean?  session_url:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___208947166042481499_70136972474400'
+
+Started POST "/__better_errors/85585dc31df639b3/variables" for 127.0.0.1 at 2018-09-18 11:15:55 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:16:13 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 806ms (ActiveRecord: 11.8ms)
+
+
+
+NameError - undefined local variable or method `sessions_url' for #<#<Class:0x00007f94120fa188>:0x00007f94120ea120>
+Did you mean?  session_url:
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___208947166042481499_70136967352220'
+
+Started POST "/__better_errors/d4919da77a742218/variables" for 127.0.0.1 at 2018-09-18 11:16:15 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:16:53 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 225ms (Views: 220.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-18 11:17:04 -0700
+Processing by SessionsController#destroy as HTML
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/f1b562ca45d109da/variables" for 127.0.0.1 at 2018-09-18 11:17:05 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:17:24 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-18 11:17:25 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authencity_token"=>"ywWLHbhV99jTDZ2RFi8FfYZljItV/Ax7thanOe5HxYcB3jXI1ghibUkktwdDpsPuuwhUZpELDxupy5CUR8MHew=="}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/4d1bd5e1a02d942f/variables" for 127.0.0.1 at 2018-09-18 11:17:25 -0700
+Started DELETE "/session" for 127.0.0.1 at 2018-09-18 11:17:51 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authencity_token"=>"ywWLHbhV99jTDZ2RFi8FfYZljItV/Ax7thanOe5HxYcB3jXI1ghibUkktwdDpsPuuwhUZpELDxupy5CUR8MHew=="}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/f8b45f58d72e47d5/variables" for 127.0.0.1 at 2018-09-18 11:17:52 -0700
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:18:01 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:18:04 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2018-09-18 11:18:05 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TlbFAbA9YSBIKJ04MS0TNzndq78QwxaPJxgnl9+9v9SEjXvU3mD0ldIBt65kpNWkBLBzUtQ0Fe84xRA6djl9KA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qt30qNa9aItv1Xh_g9WfWA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PzU1UxEWrp-xOak7svmScQ"], ["updated_at", "2018-09-18 18:18:05.879951"], ["id", 1]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:18:05 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (22.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 66ms (Views: 29.9ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:18:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:18:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:19:55 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 48ms (Views: 40.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-18 11:30:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dDoT9MhKqrJRb+px1eNWL0pAvskRjxzttdQfBfCj1TK+4a0hphc/B8tGwOeAapC8dy1mJNV4H42qCSioWScXzg==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "CatsFanMeowMan"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 226ms (Views: 219.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-09-18 11:30:56 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 100ms (Views: 28.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:03 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "290kY7npMidrkelDfZ2JpQ"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$ECC1tzGNH92jwanTF43u4udrcNG9Hd979vLt./T5kuDNnHsqbZpMK"], ["created_at", "2018-09-18 18:31:03.871878"], ["updated_at", "2018-09-18 18:31:03.871878"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TaxE6Umo04mJ_yrSEVQlgA"], ["updated_at", "2018-09-18 18:31:03.875365"], ["id", 2]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 236ms (ActiveRecord: 3.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:06 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "VeVYYFNbxhmu4P5hA8p50w"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$oyLMr/mJxT8rtcPfURDJcuff6.JCzgM12BVNODxndOZxqiG8dTdPq"], ["created_at", "2018-09-18 18:31:06.888034"], ["updated_at", "2018-09-18 18:31:06.888034"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qilBKdf-wtl2BkwUZqu7ng"], ["updated_at", "2018-09-18 18:31:06.891065"], ["id", 3]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 225ms (ActiveRecord: 4.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:08 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "j_XmofK96ulaqH9mx7vxbQ"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$kwQ7VMW7gobcNXzW6rgcrOaUkLED2vjB16g5uFTvAvy39fSogv.uu"], ["created_at", "2018-09-18 18:31:08.281073"], ["updated_at", "2018-09-18 18:31:08.281073"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "W66hHInLOiyE46z4CuJypQ"], ["updated_at", "2018-09-18 18:31:08.284819"], ["id", 4]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 230ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:08 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "3UGoxGg6O-F83ROj2l-fzQ"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$6X5m9tvi3d7czovpJiAP7eY3WZmgMvRt/T17sGgDSCRWvzAA2xHJ."], ["created_at", "2018-09-18 18:31:08.857656"], ["updated_at", "2018-09-18 18:31:08.857656"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "hlxIHyeMsIbOFmBidZiR3w"], ["updated_at", "2018-09-18 18:31:08.860515"], ["id", 5]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 235ms (ActiveRecord: 4.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:09 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "J18IQ2Qlf_5n1iC2f_wMnQ"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$8xIKq56xcMiPe422tZ7Zw.FurZWOQUGNCCVF2fmhCQAP8vfOJHSbm"], ["created_at", "2018-09-18 18:31:09.226858"], ["updated_at", "2018-09-18 18:31:09.226858"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RCSZjPwKrvnbWnTBAk-FnQ"], ["updated_at", "2018-09-18 18:31:09.230569"], ["id", 6]]
+  ↳ app/models/user.rb:32
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 233ms (ActiveRecord: 3.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:09 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "28nBsjzftZuc8QNpQOr-GA"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$FtVNIn5zZY.4GHx1beVG.eh2rY7xXHTAPNZzlZesHWEVEquBkMNAu"], ["created_at", "2018-09-18 18:31:09.534697"], ["updated_at", "2018-09-18 18:31:09.534697"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8DtSEWinOezyHD1wtvT_XQ"], ["updated_at", "2018-09-18 18:31:09.537657"], ["id", 7]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 222ms (ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:09 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "1DHdjmsTb0Kg-HtEzanpGw"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$dfZHO/BzK4IibHnTDWUk/O9k2nsDrnFVumsSTQDJ8a2u3Mw7P81Fi"], ["created_at", "2018-09-18 18:31:09.821226"], ["updated_at", "2018-09-18 18:31:09.821226"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GqW27SLaDWCm1I6pqWdNXQ"], ["updated_at", "2018-09-18 18:31:09.824203"], ["id", 8]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 235ms (ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:09 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "q6DB7Eqbo-wDx5rJhIzPdw"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$mb1GJyPhGZL5Vlwzr6I4lOcr1c7tG27atfE3a3wv729.nh.llEviK"], ["created_at", "2018-09-18 18:31:10.054068"], ["updated_at", "2018-09-18 18:31:10.054068"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "q_07kmXQNmjAEgVXGPqJzg"], ["updated_at", "2018-09-18 18:31:10.058164"], ["id", 9]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:10 -0700
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 236ms (ActiveRecord: 2.7ms)
+
+
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "BYZ1nTvvYkFcljZ2FiG7uw"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$.EdLO4x4ByAoa/dhV3IxGeFRBjANuEOOYhs3dWn31R9BojF0sS5iS"], ["created_at", "2018-09-18 18:31:10.294247"], ["updated_at", "2018-09-18 18:31:10.294247"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:10 -0700
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "y61abPxDzLXSimhoVEzYig"], ["updated_at", "2018-09-18 18:31:10.301234"], ["id", 10]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "qmtfxhW5bbn1C01NivcyOg"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$PovPKHmsQsF0gDir4EWL8OUUtHwzNUC.s827HS1rJvn.NekP3g3TK"], ["created_at", "2018-09-18 18:31:10.379605"], ["updated_at", "2018-09-18 18:31:10.379605"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "j5LzXuz35oOpNq0CSNHcFA"], ["updated_at", "2018-09-18 18:31:10.389642"], ["id", 11]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 403ms (ActiveRecord: 6.0ms)
+
+
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 380ms (ActiveRecord: 8.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:11 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "evPkSohuu46yu925CVAvFw"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$LxSMZpGocDtGTdmBvV8w2u/yAHvYratwmwZ8YSPVaKpLsUSTFVl2K"], ["created_at", "2018-09-18 18:31:11.385570"], ["updated_at", "2018-09-18 18:31:11.385570"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "EC_SUJPxYbrIo6CX-Z5eOA"], ["updated_at", "2018-09-18 18:31:11.389339"], ["id", 12]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 232ms (ActiveRecord: 4.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:33 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"dVQ9kUZYQ9ZJUsgthuGdJY/vYka90DFNituiJJ19ft+/j4NEKAXWY9N74rvTaFu2soK6q3knMi2VBpWJNPm8Iw==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "H1p7Rg81FC_7XU5EOnpy9w"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$Wz16qErLHo0SAEe3EKAN1OC2KIuUVKdlGlsjyH8LqFbCdmU1q2CS6"], ["created_at", "2018-09-18 18:31:33.315242"], ["updated_at", "2018-09-18 18:31:33.315242"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JIuFYfTn9hiPiruMdGEW_g"], ["updated_at", "2018-09-18 18:31:33.320402"], ["id", 13]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+Redirected to http://localhost:3000/session
+Completed 302 Found in 108ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/session" for 127.0.0.1 at 2018-09-18 11:31:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/session"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-09-18 11:31:53 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"JSxPunschZNukYlrG2b2Ol/f7a6jsAQg1ov6/fQdkvTv9/FvFUEQJvS4o/1O7zCpYrI1Q2dHB0DJVs1QXZlQCA==", "user"=>{"username"=>"CatsFanMeowMan", "password"=>"[FILTERED]"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("session_token", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["session_token", "SHJdhhkxXZx-Fz_is9d8Nw"], ["username", "CatsFanMeowMan"], ["password_digest", "$2a$10$QBmcq5XCm8zK95FLXC6cQejtHm0L22QKuh7LKS3L2h3eAZSPMk3Bm"], ["created_at", "2018-09-18 18:31:53.329457"], ["updated_at", "2018-09-18 18:31:53.329457"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "IVCN9yXAMu2vGEJAjNzwWQ"], ["updated_at", "2018-09-18 18:31:53.333777"], ["id", 14]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 8.8ms)
+
+
+
+NoMethodError - undefined method `user_url' for #<UsersController:0x00007f940e2870e0>
+Did you mean?  users_url:
+  app/controllers/users_controller.rb:11:in `create'
+
+Started POST "/__better_errors/79eddb9af5c96bbd/variables" for 127.0.0.1 at 2018-09-18 11:31:53 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:44:17 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/b3ee2aa7677cc70b/variables" for 127.0.0.1 at 2018-09-18 11:44:18 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLinks (20180918183319)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (193.8ms)[0m  [1m[35mCREATE TABLE "links" ("id" bigserial primary key, "user_id" integer, "title" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180918183319_create_links.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180918183319"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20180918183517)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (35.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "link_id" integer, "user_id" integer, "body" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180918183517_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180918183517"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/session/new" for 127.0.0.1 at 2018-09-18 11:44:54 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JIuFYfTn9hiPiruMdGEW_g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 386ms (Views: 362.6ms | ActiveRecord: 18.5ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-18 11:44:59 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gNMrL8qyWcmm8Ea/KIJ+9hmZ45DuQYeI1DsDiuhH0iVKCJX6pO/MfDzZbCl9C7hlJPQ7fSq2hOjL5jQnQcMQ2Q==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chris"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "FAdEF327oF96Mvu_stze7A"], ["updated_at", "2018-09-18 18:44:59.570297"], ["id", 1]]
+  ↳ app/models/user.rb:35
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 235ms (ActiveRecord: 2.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-18 11:45:06 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gNMrL8qyWcmm8Ea/KIJ+9hmZ45DuQYeI1DsDiuhH0iVKCJX6pO/MfDzZbCl9C7hlJPQ7fSq2hOjL5jQnQcMQ2Q==", "user"=>{"username"=>"chris", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "chris"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:35
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["updated_at", "2018-09-18 18:45:06.962640"], ["id", 1]]
+  ↳ app/models/user.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:35
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 242ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/links/index" for 127.0.0.1 at 2018-09-18 11:47:09 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering links/show.html.erb within layouts/application
+  Rendered links/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 103ms (Views: 69.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/links/index" for 127.0.0.1 at 2018-09-18 11:47:18 -0700
+Processing by LinksController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering links/show.html.erb within layouts/application
+  Rendered links/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/links" for 127.0.0.1 at 2018-09-18 11:47:24 -0700
+Processing by LinksController#index as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 4.2ms)
+
+
+
+NoMethodError - undefined method `belong_to' for #<Class:0x00007f94149932e8>
+Did you mean?  belongs_to:
+  app/models/link.rb:4:in `<class:Link>'
+  app/models/link.rb:1:in `<main>'
+  app/controllers/links_controller.rb:40:in `index'
+
+Started POST "/__better_errors/e7cbe318b3232459/variables" for 127.0.0.1 at 2018-09-18 11:47:24 -0700
+Started GET "/links" for 127.0.0.1 at 2018-09-18 11:47:42 -0700
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (12.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:4
+  Rendered links/index.html.erb within layouts/application (18.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 122ms (Views: 66.5ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2018-09-18 11:56:38 -0700
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 56ms (Views: 38.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/links/new" for 127.0.0.1 at 2018-09-18 11:56:43 -0700
+Processing by LinksController#new as HTML
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/new.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BgxAL57xWsMLsLYtw3QLDg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 200 OK in 41ms (Views: 36.0ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (19.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddFieldsToComment (20180918185945)
+  [1m[35m (81.6ms)[0m  [1m[35mALTER TABLE "comments" ALTER COLUMN "link_id" TYPE integer[0m
+  ↳ db/migrate/20180918185945_add_fields_to_comment.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "title" character varying NOT NULL[0m
+  ↳ db/migrate/20180918185945_add_fields_to_comment.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "comments" ADD "url" character varying[0m
+  ↳ db/migrate/20180918185945_add_fields_to_comment.rb:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "comments" ADD "sub_id" integer NOT NULL[0m
+  ↳ db/migrate/20180918185945_add_fields_to_comment.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180918185945"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

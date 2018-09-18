@@ -1,0 +1,16 @@
+<h1>New Link</h1>
+<p>Find me in app/views/links/new.html.erb</p>
+
+<form class="" action="<%= links_url  %>" method="post">
+  <input type="hidden" name="authenticitiy_token" value="<%= form_authenticity_token %>">
+
+  <label> Title
+    <input type="text" name="link[title]" value="">
+  </label>
+  <label> URL
+      <input type="text" name="link[url]" value="">
+    </label>
+    <input type="submit" name="" value="make link, and congrats if you found this page!">
+
+
+</form>
